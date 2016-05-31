@@ -112,7 +112,27 @@
 		291267C01CBCA3800010A740 /* ETSConsommation.m in Sources */ = {isa = PBXBuildFile; fileRef = 291267BF1CBCA3800010A740 /* ETSConsommation.m */; };
 		2942BF001BF3B43C0032C79A /* ETSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */; };
 		296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B68411BD52C11003A8E62 /* Launch_Screen.xib */; };
+		297D5CA41CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D5CA31CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.m */; };
+		297D61DA1CFDE5CD0019165A /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61BE1CFDE5CD0019165A /* NSData+ImageContentType.m */; };
+		297D61DB1CFDE5CD0019165A /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61C01CFDE5CD0019165A /* SDImageCache.m */; };
+		297D61DC1CFDE5CD0019165A /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61C21CFDE5CD0019165A /* SDWebImageCompat.m */; };
+		297D61DD1CFDE5CD0019165A /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61C41CFDE5CD0019165A /* SDWebImageDecoder.m */; };
+		297D61DE1CFDE5CD0019165A /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61C61CFDE5CD0019165A /* SDWebImageDownloader.m */; };
+		297D61DF1CFDE5CD0019165A /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61C81CFDE5CD0019165A /* SDWebImageDownloaderOperation.m */; };
+		297D61E01CFDE5CD0019165A /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61CA1CFDE5CD0019165A /* SDWebImageManager.m */; };
+		297D61E11CFDE5CD0019165A /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61CD1CFDE5CD0019165A /* SDWebImagePrefetcher.m */; };
+		297D61E21CFDE5CD0019165A /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61CF1CFDE5CD0019165A /* UIButton+WebCache.m */; };
+		297D61E31CFDE5CD0019165A /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61D11CFDE5CD0019165A /* UIImage+GIF.m */; };
+		297D61E41CFDE5CD0019165A /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61D31CFDE5CD0019165A /* UIImage+MultiFormat.m */; };
+		297D61E51CFDE5CD0019165A /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61D51CFDE5CD0019165A /* UIImageView+HighlightedWebCache.m */; };
+		297D61E61CFDE5CD0019165A /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61D71CFDE5CD0019165A /* UIImageView+WebCache.m */; };
+		297D61E71CFDE5CD0019165A /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D61D91CFDE5CD0019165A /* UIView+WebCacheOperation.m */; };
+		29B467971CFDE04500DB952C /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B467961CFDE04500DB952C /* UIViewController+ScrollingNavbar.m */; };
 		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; };
+		29D0160F1CFDE4DA0018746A /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D0160C1CFDE4DA0018746A /* MSDynamicsDrawerStyler.m */; };
+		29D016101CFDE4DA0018746A /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D0160E1CFDE4DA0018746A /* MSDynamicsDrawerViewController.m */; };
+		29FC325C1CFDE2F5002C863E /* NSDate+CupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC325B1CFDE2F5002C863E /* NSDate+CupertinoYankee.m */; };
+		29FC32601CFDE3CD002C863E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FC325F1CFDE3CD002C863E /* UIScrollView+EmptyDataSet.m */; };
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
@@ -337,7 +357,48 @@
 		2942BEFC1BF3AF000032C79A /* ETSMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSAboutViewController.swift; sourceTree = "<group>"; };
 		296B68411BD52C11003A8E62 /* Launch_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch_Screen.xib; sourceTree = "<group>"; };
+		297D5CA21CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
+		297D5CA31CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
+		297D61BD1CFDE5CD0019165A /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "Vendors/SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		297D61BE1CFDE5CD0019165A /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "Vendors/SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		297D61BF1CFDE5CD0019165A /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = Vendors/SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
+		297D61C01CFDE5CD0019165A /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = Vendors/SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
+		297D61C11CFDE5CD0019165A /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = Vendors/SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
+		297D61C21CFDE5CD0019165A /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = Vendors/SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
+		297D61C31CFDE5CD0019165A /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = Vendors/SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
+		297D61C41CFDE5CD0019165A /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = Vendors/SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
+		297D61C51CFDE5CD0019165A /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = Vendors/SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
+		297D61C61CFDE5CD0019165A /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = Vendors/SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
+		297D61C71CFDE5CD0019165A /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = Vendors/SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		297D61C81CFDE5CD0019165A /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = Vendors/SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		297D61C91CFDE5CD0019165A /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = Vendors/SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
+		297D61CA1CFDE5CD0019165A /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = Vendors/SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
+		297D61CB1CFDE5CD0019165A /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = Vendors/SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
+		297D61CC1CFDE5CD0019165A /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = Vendors/SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		297D61CD1CFDE5CD0019165A /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = Vendors/SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		297D61CE1CFDE5CD0019165A /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "Vendors/SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
+		297D61CF1CFDE5CD0019165A /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "Vendors/SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
+		297D61D01CFDE5CD0019165A /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "Vendors/SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
+		297D61D11CFDE5CD0019165A /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "Vendors/SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
+		297D61D21CFDE5CD0019165A /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "Vendors/SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		297D61D31CFDE5CD0019165A /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "Vendors/SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		297D61D41CFDE5CD0019165A /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "Vendors/SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		297D61D51CFDE5CD0019165A /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "Vendors/SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		297D61D61CFDE5CD0019165A /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "Vendors/SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		297D61D71CFDE5CD0019165A /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "Vendors/SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		297D61D81CFDE5CD0019165A /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "Vendors/SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		297D61D91CFDE5CD0019165A /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "Vendors/SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		29B467951CFDE04500DB952C /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
+		29B467961CFDE04500DB952C /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
 		29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ETS-logo-blanc.png"; path = "Images.xcassets/ETS-logo-blanc.imageset/ETS-logo-blanc.png"; sourceTree = "<group>"; };
+		29D0160B1CFDE4DA0018746A /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerStyler.h; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
+		29D0160C1CFDE4DA0018746A /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerStyler.m; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
+		29D0160D1CFDE4DA0018746A /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerViewController.h; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
+		29D0160E1CFDE4DA0018746A /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerViewController.m; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		29FC325A1CFDE2F5002C863E /* NSDate+CupertinoYankee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+CupertinoYankee.h"; path = "Vendors/CupertinoYankee/NSDate+CupertinoYankee.h"; sourceTree = "<group>"; };
+		29FC325B1CFDE2F5002C863E /* NSDate+CupertinoYankee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+CupertinoYankee.m"; path = "Vendors/CupertinoYankee/NSDate+CupertinoYankee.m"; sourceTree = "<group>"; };
+		29FC325E1CFDE3CD002C863E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "Vendors/DZNEmptyDataSet/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		29FC325F1CFDE3CD002C863E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "Vendors/DZNEmptyDataSet/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
 		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
 		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
@@ -838,6 +899,12 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				297D61BC1CFDE5C30019165A /* SDWebImage */,
+				296F3E9E1CFDE43F00A5CA71 /* MSDynamicsDrawerViewController */,
+				29FC325D1CFDE38D002C863E /* DZNEmptyDataSet */,
+				297D5CA11CFDE21B00AB9E64 /* MSCollectionViewCalendarLayout */,
+				29B467981CFDE0F300DB952C /* CupertinoYankee */,
+				29B467901CFDDF5D00DB952C /* AMScrollingNavbar */,
 				1D8B140B19A7B1D90033CBA7 /* GTMNSString+HTML */,
 				2698C6F618274F4F00F6281F /* KeychainWrapper */,
 			);
@@ -914,6 +981,90 @@
 			children = (
 			);
 			name = "3D Touch icons";
+			sourceTree = "<group>";
+		};
+		296F3E9E1CFDE43F00A5CA71 /* MSDynamicsDrawerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29D0160B1CFDE4DA0018746A /* MSDynamicsDrawerStyler.h */,
+				29D0160C1CFDE4DA0018746A /* MSDynamicsDrawerStyler.m */,
+				29D0160D1CFDE4DA0018746A /* MSDynamicsDrawerViewController.h */,
+				29D0160E1CFDE4DA0018746A /* MSDynamicsDrawerViewController.m */,
+			);
+			name = MSDynamicsDrawerViewController;
+			sourceTree = "<group>";
+		};
+		297D5CA11CFDE21B00AB9E64 /* MSCollectionViewCalendarLayout */ = {
+			isa = PBXGroup;
+			children = (
+				297D5CA21CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.h */,
+				297D5CA31CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.m */,
+			);
+			name = MSCollectionViewCalendarLayout;
+			sourceTree = "<group>";
+		};
+		297D61BC1CFDE5C30019165A /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				297D61BD1CFDE5CD0019165A /* NSData+ImageContentType.h */,
+				297D61BE1CFDE5CD0019165A /* NSData+ImageContentType.m */,
+				297D61BF1CFDE5CD0019165A /* SDImageCache.h */,
+				297D61C01CFDE5CD0019165A /* SDImageCache.m */,
+				297D61C11CFDE5CD0019165A /* SDWebImageCompat.h */,
+				297D61C21CFDE5CD0019165A /* SDWebImageCompat.m */,
+				297D61C31CFDE5CD0019165A /* SDWebImageDecoder.h */,
+				297D61C41CFDE5CD0019165A /* SDWebImageDecoder.m */,
+				297D61C51CFDE5CD0019165A /* SDWebImageDownloader.h */,
+				297D61C61CFDE5CD0019165A /* SDWebImageDownloader.m */,
+				297D61C71CFDE5CD0019165A /* SDWebImageDownloaderOperation.h */,
+				297D61C81CFDE5CD0019165A /* SDWebImageDownloaderOperation.m */,
+				297D61C91CFDE5CD0019165A /* SDWebImageManager.h */,
+				297D61CA1CFDE5CD0019165A /* SDWebImageManager.m */,
+				297D61CB1CFDE5CD0019165A /* SDWebImageOperation.h */,
+				297D61CC1CFDE5CD0019165A /* SDWebImagePrefetcher.h */,
+				297D61CD1CFDE5CD0019165A /* SDWebImagePrefetcher.m */,
+				297D61CE1CFDE5CD0019165A /* UIButton+WebCache.h */,
+				297D61CF1CFDE5CD0019165A /* UIButton+WebCache.m */,
+				297D61D01CFDE5CD0019165A /* UIImage+GIF.h */,
+				297D61D11CFDE5CD0019165A /* UIImage+GIF.m */,
+				297D61D21CFDE5CD0019165A /* UIImage+MultiFormat.h */,
+				297D61D31CFDE5CD0019165A /* UIImage+MultiFormat.m */,
+				297D61D41CFDE5CD0019165A /* UIImageView+HighlightedWebCache.h */,
+				297D61D51CFDE5CD0019165A /* UIImageView+HighlightedWebCache.m */,
+				297D61D61CFDE5CD0019165A /* UIImageView+WebCache.h */,
+				297D61D71CFDE5CD0019165A /* UIImageView+WebCache.m */,
+				297D61D81CFDE5CD0019165A /* UIView+WebCacheOperation.h */,
+				297D61D91CFDE5CD0019165A /* UIView+WebCacheOperation.m */,
+			);
+			name = SDWebImage;
+			sourceTree = "<group>";
+		};
+		29B467901CFDDF5D00DB952C /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				29B467951CFDE04500DB952C /* UIViewController+ScrollingNavbar.h */,
+				29B467961CFDE04500DB952C /* UIViewController+ScrollingNavbar.m */,
+			);
+			name = AMScrollingNavbar;
+			path = Vendors/AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
+		29B467981CFDE0F300DB952C /* CupertinoYankee */ = {
+			isa = PBXGroup;
+			children = (
+				29FC325A1CFDE2F5002C863E /* NSDate+CupertinoYankee.h */,
+				29FC325B1CFDE2F5002C863E /* NSDate+CupertinoYankee.m */,
+			);
+			name = CupertinoYankee;
+			sourceTree = "<group>";
+		};
+		29FC325D1CFDE38D002C863E /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				29FC325E1CFDE3CD002C863E /* UIScrollView+EmptyDataSet.h */,
+				29FC325F1CFDE3CD002C863E /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = DZNEmptyDataSet;
 			sourceTree = "<group>";
 		};
 		9C5071E6189AF5D8000CB45E /* Security */ = {
@@ -1133,6 +1284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
+				297D61DB1CFDE5CD0019165A /* SDImageCache.m in Sources */,
 				263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */,
 				1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
@@ -1140,11 +1292,14 @@
 				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,
 				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
 				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
+				297D61DA1CFDE5CD0019165A /* NSData+ImageContentType.m in Sources */,
 				26DEB88D18EC97EC00161421 /* MSEventCell.m in Sources */,
+				29FC325C1CFDE2F5002C863E /* NSDate+CupertinoYankee.m in Sources */,
 				2664F1E618FF31360054BF58 /* ETSMenuTableViewHeader.m in Sources */,
 				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
 				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
+				297D61E41CFDE5CD0019165A /* UIImage+MultiFormat.m in Sources */,
 				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
 				26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */,
 				26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */,
@@ -1153,6 +1308,7 @@
 				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
 				291267C01CBCA3800010A740 /* ETSConsommation.m in Sources */,
 				26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */,
+				297D61E11CFDE5CD0019165A /* SDWebImagePrefetcher.m in Sources */,
 				291267BD1CBCA3500010A740 /* ETSMobile.xcdatamodeld in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
 				1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */,
@@ -1162,20 +1318,25 @@
 				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
 				263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */,
 				2664F1E818FF35F30054BF58 /* ETSMenuViewController.m in Sources */,
+				297D61DC1CFDE5CD0019165A /* SDWebImageCompat.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
+				29D0160F1CFDE4DA0018746A /* MSDynamicsDrawerStyler.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
+				29FC32601CFDE3CD002C863E /* UIScrollView+EmptyDataSet.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
+				297D61E61CFDE5CD0019165A /* UIImageView+WebCache.m in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
 				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
+				29B467971CFDE04500DB952C /* UIViewController+ScrollingNavbar.m in Sources */,
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
 				2942BF001BF3B43C0032C79A /* ETSAboutViewController.swift in Sources */,
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
@@ -1186,13 +1347,19 @@
 				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
+				29D016101CFDE4DA0018746A /* MSDynamicsDrawerViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
+				297D61DE1CFDE5CD0019165A /* SDWebImageDownloader.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
+				297D61E71CFDE5CD0019165A /* UIView+WebCacheOperation.m in Sources */,
+				297D61DF1CFDE5CD0019165A /* SDWebImageDownloaderOperation.m in Sources */,
 				FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */,
+				297D61E01CFDE5CD0019165A /* SDWebImageManager.m in Sources */,
 				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
 				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
+				297D61E31CFDE5CD0019165A /* UIImage+GIF.m in Sources */,
 				1472C9621CD7E3FD004D9A9C /* ETSSponsors.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,
 				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
@@ -1200,13 +1367,17 @@
 				26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */,
 				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
 				1472C95F1CD7E082004D9A9C /* ETSEvalEnseignement.m in Sources */,
+				297D61DD1CFDE5CD0019165A /* SDWebImageDecoder.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
 				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
+				297D61E21CFDE5CD0019165A /* UIButton+WebCache.m in Sources */,
 				265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				1472C9681CDA2F94004D9A9C /* ETSCollectionViewCell.m in Sources */,
+				297D5CA41CFDE26300AB9E64 /* MSCollectionViewCalendarLayout.m in Sources */,
 				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
 				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
+				297D61E51CFDE5CD0019165A /* UIImageView+HighlightedWebCache.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,
 				26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */,
@@ -1407,7 +1578,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1451,7 +1622,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
