@@ -120,15 +120,33 @@
     parameters[@"pSession"] = course.session;
     
     NSError *error = nil;
-    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
-    NSLog(@"Request body %@", [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding]);
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters
+                                                         options:kNilOptions
+                                                           error:&error]];
+    NSLog(@"Request body %@", [[NSString alloc] initWithData:[request HTTPBody]
+                                                    encoding:NSUTF8StringEncoding]);
     
     return request;
 }
 
-+ (id)requestForEvalEnseignement
++ (id)requestForEvalEnseignement:(ETSCourse *)course
 {
-    return [self requestWithUsernameAndPassword:[NSURL URLForEvalEnseignement]];
+    NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForEvalEnseignement]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
+    if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
+    parameters[@"pSession"] = course.session;
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters
+                                                         options:kNilOptions
+                                                           error:&error]];
+    NSLog(@"Request body %@", [[NSString alloc] initWithData:[request HTTPBody]
+                                                    encoding:NSUTF8StringEncoding]);
+    
+    return request;
 }
 
 + (id)requestForDirectory
