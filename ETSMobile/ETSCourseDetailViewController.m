@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSNumberFormatter *formatterPourcent;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
+@property (nonatomic, assign) BOOL shouldHideResults;
 @end
 
 @implementation ETSCourseDetailViewController
@@ -31,11 +32,13 @@
 {
     NSError *error;
     [self.synchronization synchronize:&error];
+    [self.secondSynchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.shouldHideResults = false;
     
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
@@ -47,6 +50,14 @@
         synchronization.predicate = [NSPredicate predicateWithFormat:@"course.id == %@", self.course.id];
         self.synchronization = synchronization;
         self.synchronization.delegate = self;
+        
+        ETSSynchronization *secondSynchronization = [[ETSSynchronization alloc] init];
+        secondSynchronization.request = [NSURLRequest requestForEvalEnseignement: self.course];
+        secondSynchronization.entityName = @"EvalEnseignement";
+        secondSynchronization.objectsKeyPath = @"d.liste";
+        
+        self.secondSynchronization = secondSynchronization;
+        self.secondSynchronization.delegate = self;
     }
     
     self.formatter = [[NSNumberFormatter alloc] init];
@@ -167,7 +178,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.hadResults) return 2;
+    if(self.shouldHideResults) {
+        return 0;
+    }
+    else if (self.hadResults) return 2;
     else if (self.course.grade && [self.course.grade length] > 0) return 1;
     else return 0;
 }
@@ -260,20 +274,37 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveDictionary:(NSDictionary *)dictionary
 {
+    
     NSDictionary *results = dictionary[@"d"];
-    self.course.resultOn100 = [self.formatter numberFromString:results[@"scoreFinalSur100"]];
-    self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
-    self.course.mean        = [self.formatter numberFromString:results[@"moyenneClasse"]];
-    self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
-    self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
-    self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
-    // NSManagedObjectContext can be nil (Apple Documentation).
-    // Need to check for that before using the object.
-    if (self.course.managedObjectContext != nil) {
-        NSError *error;
-        [self.course.managedObjectContext save:&error];
-        if (error != nil) {
-            NSLog(@"Unresolved error: %@", error);
+    
+    if(results[@"listeEvaluations"] != nil) {
+        
+        // On doit créer une liste de toute les évaluations avec le dictionnaire des résultats.
+        // On doit parcourir toute cette liste et comparer les évaluations avec celle du cours de la vue.
+        // Si une de ses évaluations est à false et que la date de début et de fin est entre la date d'aujourd'hui on doit afficher le emptyDataView
+        
+        self.shouldHideResults = true;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    }
+    else {
+        self.course.resultOn100 = [self.formatter numberFromString:results[@"scoreFinalSur100"]];
+        self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
+        self.course.mean        = [self.formatter numberFromString:results[@"moyenneClasse"]];
+        self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
+        self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
+        self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
+        // NSManagedObjectContext can be nil (Apple Documentation).
+        // Need to check for that before using the object.
+        if (self.course.managedObjectContext != nil) {
+            NSError *error;
+            [self.course.managedObjectContext save:&error];
+            if (error != nil) {
+                NSLog(@"Unresolved error: %@", error);
+            }
         }
     }
 }
