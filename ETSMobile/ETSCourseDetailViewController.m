@@ -83,18 +83,17 @@
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
 }
 
-- (NSAttributedString *)titleforEvaluationNotCompleted: (UIScrollView *)scrollView
-{
-    NSString *text = @"Veuillez compléter l'évaluation de ce cours avant de pouvoir accéder à vos notes";
-    
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
-                                 NSForegroundColorAttributeName: [UIColor blackColor]};
-    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
-}
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"Aucune note disponible pour le moment.";
+    NSString *text = @"";
+    
+    if (_shouldHideResults) {
+        text = @"Veuillez compléter l'évaluation de ce cours avant de pouvoir accéder à vos notes";
+    }
+    else {
+        text = @"Aucune note disponible pour le moment.";
+    }
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: [UIColor blackColor]};
@@ -277,11 +276,14 @@
     
     NSDictionary *results = dictionary[@"d"];
     
-    if(results[@"listeEvaluations"] != nil) {
+    NSLog(@"liste Evaluations : \n %@", [results valueForKey:@"listeEvaluations"]);
+    
+    if([results valueForKey:@"listeEvaluations"]) {
         
-        // On doit créer une liste de toute les évaluations avec le dictionnaire des résultats.
-        // On doit parcourir toute cette liste et comparer les évaluations avec celle du cours de la vue.
-        // Si une de ses évaluations est à false et que la date de début et de fin est entre la date d'aujourd'hui on doit afficher le emptyDataView
+        
+        // On doit créer une liste de toutes les évaluations avec le dictionnaire des résultats.
+        // On doit parcourir cette liste et en sélectionner les évaluations correspondant au cours de la vue s'il y en a.
+        // Si le booléen EstComplete de l'une de ses évaluations est à false et que la date d'aujourd'hui se trouve entre la date de début et la date de fin, on doit afficher le emptyDataView.
         
         self.shouldHideResults = true;
         
