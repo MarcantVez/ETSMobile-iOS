@@ -26,8 +26,12 @@
     [super viewDidLoad];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
+    
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
+    
+    
+    self.collectionView.alwaysBounceVertical = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated

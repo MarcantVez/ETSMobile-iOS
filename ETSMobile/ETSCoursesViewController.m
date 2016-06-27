@@ -45,7 +45,7 @@
  
  // On doit créer une liste de toutes les évaluations avec le dictionnaire des résultats.
  // On doit parcourir cette liste et en sélectionner les évaluations correspondant au cours de la vue s'il y en a.
- // Si le booléen EstComplete de l'une de ses évaluations est à false et que la date d'aujourd'hui se trouve entre la date de début et la date de fin, on doit afficher le emptyDataView.
+ // Si le booléen EstComplete de l'une de ses évaluations est à false et que la date d'aujourd'hui se trouve entre la date de début et la date de fin, on doit afficher une AlertView.
  
  self.shouldHideResults = true;
  
@@ -211,10 +211,35 @@
     // Always get a fresh fetchedResultsController before changing context.
     self.fetchedResultsController = nil;
     self.fetchedResultsController = [self fetchedResultsController];
-    
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    
     vc.managedObjectContext = self.managedObjectContext;
     self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+
+    
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    
+    if ([course.acronym isEqualToString:@"LOG121"]){ //à remplacer par la liste des cours à évaluer
+        
+        NSLog(@"------------------------  %@  !!!!!!!!!                 ALLO",course.acronym);
+        
+        
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Période d'évaluation"
+                                                           message:@"Vous ne pouvez pas accéder à vos notes présentement car vous n'avez pas encore complété l'évaluation en ligne pour ce cours."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+        [theAlert show];
+        
+        return NO;
+    }
+    else {
+        return YES;
+    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
