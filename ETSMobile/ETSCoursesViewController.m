@@ -23,6 +23,46 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
 @property (strong, nonatomic) NSMutableDictionary *courseResults; // Temporary results (on 100%) are saved here.
+
+//@property (nonatomic, assign) BOOL shouldHideResults;
+//self.shouldHideResults = false;
+
+//[self.secondSynchronization synchronize:&error]; (start refresh??)
+
+/*ETSSynchronization *secondSynchronization = [[ETSSynchronization alloc] init];
+ secondSynchronization.request = [NSURLRequest requestForEvalEnseignement: self.course];
+ secondSynchronization.entityName = @"EvalEnseignement";
+ secondSynchronization.objectsKeyPath = @"d.liste";
+ 
+ self.secondSynchronization = secondSynchronization;
+ self.secondSynchronization.delegate = self;       (viewDidLoad) */
+
+
+/*    NSLog(@"liste Evaluations : \n %@", [results valueForKey:@"listeEvaluations"]);
+ 
+ if([results valueForKey:@"listeEvaluations"]) {
+ 
+ 
+ // On doit créer une liste de toutes les évaluations avec le dictionnaire des résultats.
+ // On doit parcourir cette liste et en sélectionner les évaluations correspondant au cours de la vue s'il y en a.
+ // Si le booléen EstComplete de l'une de ses évaluations est à false et que la date d'aujourd'hui se trouve entre la date de début et la date de fin, on doit afficher le emptyDataView.
+ 
+ self.shouldHideResults = true;
+ 
+ dispatch_async(dispatch_get_main_queue(), ^{
+ [self.tableView reloadData];
+ });
+ 
+ }
+ else { // comportement "normal"
+ 
+ 
+ (didReceiveDictionnary)*/
+
+
+
+//[self.secondSynchronization synchronize:&error]; (startRefresh ETSTableViewController)
+
 @end
 
 @implementation ETSCoursesViewController
@@ -48,6 +88,10 @@
     synchronization.ignoredAttributes = @[@"results", @"resultOn100", @"mean", @"median", @"std", @"percentile"];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
+    
+    
+    
+
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];

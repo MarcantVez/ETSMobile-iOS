@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSNumberFormatter *formatterPourcent;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
-@property (nonatomic, assign) BOOL shouldHideResults;
+
 @end
 
 @implementation ETSCourseDetailViewController
@@ -32,13 +32,12 @@
 {
     NSError *error;
     [self.synchronization synchronize:&error];
-    [self.secondSynchronization synchronize:&error];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shouldHideResults = false;
     
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
@@ -51,13 +50,6 @@
         self.synchronization = synchronization;
         self.synchronization.delegate = self;
         
-        ETSSynchronization *secondSynchronization = [[ETSSynchronization alloc] init];
-        secondSynchronization.request = [NSURLRequest requestForEvalEnseignement: self.course];
-        secondSynchronization.entityName = @"EvalEnseignement";
-        secondSynchronization.objectsKeyPath = @"d.liste";
-        
-        self.secondSynchronization = secondSynchronization;
-        self.secondSynchronization.delegate = self;
     }
     
     self.formatter = [[NSNumberFormatter alloc] init];
@@ -86,14 +78,7 @@
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"";
-    
-    if (_shouldHideResults) {
-        text = @"Veuillez compléter l'évaluation de ce cours avant de pouvoir accéder à vos notes";
-    }
-    else {
-        text = @"Aucune note disponible pour le moment.";
-    }
+    NSString *text = @"Aucune note disponible pour le moment.";
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: [UIColor blackColor]};
@@ -177,10 +162,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if(self.shouldHideResults) {
-        return 0;
-    }
-    else if (self.hadResults) return 2;
+    if (self.hadResults) return 2;
     else if (self.course.grade && [self.course.grade length] > 0) return 1;
     else return 0;
 }
@@ -276,23 +258,6 @@
     
     NSDictionary *results = dictionary[@"d"];
     
-    NSLog(@"liste Evaluations : \n %@", [results valueForKey:@"listeEvaluations"]);
-    
-    if([results valueForKey:@"listeEvaluations"]) {
-        
-        
-        // On doit créer une liste de toutes les évaluations avec le dictionnaire des résultats.
-        // On doit parcourir cette liste et en sélectionner les évaluations correspondant au cours de la vue s'il y en a.
-        // Si le booléen EstComplete de l'une de ses évaluations est à false et que la date d'aujourd'hui se trouve entre la date de début et la date de fin, on doit afficher le emptyDataView.
-        
-        self.shouldHideResults = true;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-        
-    }
-    else {
         self.course.resultOn100 = [self.formatter numberFromString:results[@"scoreFinalSur100"]];
         self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
         self.course.mean        = [self.formatter numberFromString:results[@"moyenneClasse"]];
@@ -308,7 +273,6 @@
                 NSLog(@"Unresolved error: %@", error);
             }
         }
-    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

@@ -19,7 +19,6 @@
 {
     NSError *error;
     [self.synchronization synchronize:&error];
-    [self.secondSynchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
@@ -43,9 +42,10 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
 
     NSError *error;
-    if (self.dataNeedRefresh)
+    if (self.dataNeedRefresh) {
         [self.synchronization synchronize:&error];
-        [self.secondSynchronization synchronize:&error];
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning
