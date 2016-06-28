@@ -129,7 +129,7 @@
     return request;
 }
 
-+ (id)requestForEvalEnseignement:(ETSCourse *)course
++ (id)requestForEvalEnseignement:(NSString *)session
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForEvalEnseignement]];
     
@@ -137,7 +137,7 @@
     
     if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
     if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
-    parameters[@"pSession"] = course.session;
+    parameters[@"pSession"] = session;
     
     NSError *error = nil;
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters

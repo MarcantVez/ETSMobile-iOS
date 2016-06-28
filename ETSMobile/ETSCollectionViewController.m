@@ -19,6 +19,7 @@
 {
     NSError *error;
     [self.synchronization synchronize:&error];
+    [self.evalSynchronization synchronize:&error];
 }
 
 - (void)viewDidLoad

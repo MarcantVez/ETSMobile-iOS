@@ -18,7 +18,7 @@
 + (id)requestForMoodleCoursesWithToken:(NSString *)token userid:(NSString *)userid;
 + (id)requestForMoodleCourseDetailWithToken:(NSString *)token courseid:(NSString *)courseid;
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
-+ (id)requestForEvalEnseignement:(ETSCourse *)course;
++ (id)requestForEvalEnseignement:(NSString *)session;
 + (id)requestForDirectory;
 + (id)requestForNewsWithSources:(NSArray *)sources;
 + (id)requestForRadio;

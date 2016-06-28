@@ -13,6 +13,7 @@
 @interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
 
 @property (strong, nonatomic) ETSSynchronization *synchronization;
+@property (strong, nonatomic) ETSSynchronization *evalSynchronization;
 @property (copy,   nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

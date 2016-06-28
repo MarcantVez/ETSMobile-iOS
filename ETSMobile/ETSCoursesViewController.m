@@ -77,6 +77,7 @@
         self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
     }
     self.title =  NSLocalizedString(@"Notes", nil);
+    NSString *session = @"É2016";                   // à remplacer par la session en cours
     
     self.cellIdentifier = @"CourseIdentifier";
     
@@ -90,7 +91,13 @@
     self.synchronization.delegate = self;
     
     
+    ETSSynchronization *evalSynchronization = [[ETSSynchronization alloc] init];
+    evalSynchronization.request = [NSURLRequest requestForEvalEnseignement: session];
+    evalSynchronization.entityName = @"EvalEnseignement";
+    evalSynchronization.objectsKeyPath = @"d.liste";
     
+    self.evalSynchronization = evalSynchronization;
+    self.evalSynchronization.delegate = self;
 
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
@@ -223,9 +230,11 @@
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     
+    
+    
     if ([course.acronym isEqualToString:@"LOG121"]){ //à remplacer par la liste des cours à évaluer
         
-        NSLog(@"------------------------  %@  !!!!!!!!!                 ALLO",course.acronym);
+        NSLog(@"------------------------  %@  !!!!!!!!!",course.acronym);
         
         
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Période d'évaluation"
@@ -244,6 +253,11 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
+    
+    
+    NSLog(@"!!!!!!!!! -----------------        liste Evaluations : \n %@   -------------------- !!!!!", [object valueForKey:@"listeEvaluations"]);
+
+    
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
     
     ETSCourse *course = (ETSCourse *)managedObject;
