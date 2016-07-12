@@ -15,6 +15,7 @@
 #import "NSURLRequest+API.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSMenuViewController.h"
+#import "ETSCalendar.h"
 #import <QuartzCore/QuartzCore.h>
 
 #import <Crashlytics/Crashlytics.h>
@@ -77,7 +78,8 @@
         self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
     }
     self.title =  NSLocalizedString(@"Notes", nil);
-    NSString *session = @"É2016";                   // à remplacer par la session en cours
+    
+    NSString *session = self.readCurrentSession;
     
     self.cellIdentifier = @"CourseIdentifier";
     
@@ -255,9 +257,8 @@
 {
     
     
-    NSLog(@"!!!!!!!!! -----------------        liste Evaluations : \n %@   -------------------- !!!!!", [object valueForKey:@"listeEvaluations"]);
+    NSLog(@"!!!!!!!!! ------------    liste Evaluations : \n %@   -------------------- !!!!!", [object valueForKey:@"listeEvaluations"]);
 
-    
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
     
     ETSCourse *course = (ETSCourse *)managedObject;
@@ -287,6 +288,30 @@
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
 {
     return [ETSAuthenticationViewController validateJSONResponse:response];
+}
+
+- (NSString *)readCurrentSession
+{
+    NSArray *fetchedObjects;
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Calendar" inManagedObjectContext:context];
+    [fetch setEntity:entityDescription];
+    
+    NSError * error = nil;
+    fetchedObjects = [context executeFetchRequest:fetch error:&error];
+    
+    if(fetchedObjects)
+    {
+        ETSCalendar *currentCalendar = [fetchedObjects objectAtIndex:0];
+        
+        return currentCalendar.session;
+    }
+
+    else
+    {
+        return nil;
+    }
 }
 
 @end

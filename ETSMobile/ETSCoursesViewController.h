@@ -11,4 +11,6 @@
 
 @interface ETSCoursesViewController : ETSCollectionViewController <ETSSynchronizationDelegate>
 
+-(NSString *)readCurrentSession;
+
 @end
