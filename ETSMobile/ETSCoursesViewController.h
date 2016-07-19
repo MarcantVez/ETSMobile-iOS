@@ -12,5 +12,6 @@
 @interface ETSCoursesViewController : ETSCollectionViewController <ETSSynchronizationDelegate>
 
 -(NSString *)readCurrentSession;
+-(BOOL)courseMustBeEvaluated:(NSString *)courseSelected;
 
 @end

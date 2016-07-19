@@ -101,7 +101,7 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         }
         
-        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+        NSLog(@"Data received : %@", [NSString stringWithUTF8String:[data bytes]]);
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];

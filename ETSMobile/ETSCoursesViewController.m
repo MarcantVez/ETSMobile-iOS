@@ -24,6 +24,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
 @property (strong, nonatomic) NSMutableDictionary *courseResults; // Temporary results (on 100%) are saved here.
+@property (strong, nonatomic) NSArray *coursesToEvaluate;
 
 //@property (nonatomic, assign) BOOL shouldHideResults;
 //self.shouldHideResults = false;
@@ -232,9 +233,11 @@
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     
+    NSString *courseSelected = course.acronym;
     
-    
-    if ([course.acronym isEqualToString:@"LOG121"]){ //à remplacer par la liste des cours à évaluer
+
+    if([self courseMustBeEvaluated:courseSelected])
+    {
         
         NSLog(@"------------------------  %@  !!!!!!!!!",course.acronym);
         
@@ -255,14 +258,18 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
+
     
+    _coursesToEvaluate = @[@"MAT265", @"LOG121"]; //à remplacer par la liste des cours à évaluer (requête EvalEnseignement)
     
-    NSLog(@"!!!!!!!!! ------------    liste Evaluations : \n %@   -------------------- !!!!!", [object valueForKey:@"listeEvaluations"]);
+    //NSLog(@"!!!!!!!!! ------------    liste Evaluations : \n %@   -------------------- !!!!!", [object valueForKey:@"listeEvaluations"]);
 
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
     
     ETSCourse *course = (ETSCourse *)managedObject;
     course.year = @([[object[@"session"] substringFromIndex:1] integerValue]);
+    
+    //NSString *testSession =  @([[object[@"session"] substringFromIndex:0]]);
     
     NSString *seasonString = [object[@"session"] substringToIndex:1];
     if ([seasonString isEqualToString:@"H"])      course.season = @1;
@@ -312,6 +319,19 @@
     {
         return nil;
     }
+}
+
+- (BOOL)courseMustBeEvaluated:(NSString *)courseSelected
+{
+    BOOL courseFound = NO;
+    for (NSString *someCourse in _coursesToEvaluate) {
+        if ([someCourse  isEqualToString:courseSelected]) {
+            courseFound = YES;
+            break;
+        }
+    }
+    
+    return courseFound;
 }
 
 @end
